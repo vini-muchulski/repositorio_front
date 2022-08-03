@@ -14,9 +14,29 @@
         ua_mars = conversor_de_unidades_astronomicas(mars_distance)
         console.log("Marte - UA: ", ua_mars)
 
-        planeta = input("Digite o planeta: ").upper
+        //planeta = input("Digite o planeta: ").upper
+        //console.log(planeta)
 
-        console.log(planeta)
+        planetas = ["Mercury", "Venus","Earth","Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+
+        for (astro of planetas) {
+            console.log(astro) 
+        }
+        planetas.push = "Pluto"
+        console.log(planetas)
+
+        planetas.pop()
+        planetas.pop()
+        console.log(planetas)
+
+        planetas_rochosos_internos = [ 
+           {spacex : 1.5},
+            {spacex : 1}
+    ]
+    for (rochoso of planetas_rochosos_internos){
+        console.log(rochoso, rochoso.spacex)
+    }
+        
 
         
 
