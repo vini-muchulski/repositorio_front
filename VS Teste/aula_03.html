@@ -62,19 +62,6 @@
 			
 			}
 
-		function distribuicao_despesas(lancamentos, total)
-		{	
-			distribuicao_de_despesas = []
-			for (lancamento of lancamentos)
-			{
-				if (lancamento.tipo === "despesa") {
-					 porcentagem_de_cada_gasto = arredondar((lancamento.valor/(-total)*100))
-					 distribuicao_de_despesas.push({Categoria: lancamento.categoria ,porcentagem_de_cada_gasto  } )		
-				}
-			}
-		return distribuicao_de_despesas
-		}
-
 			totalizadorDoMes.proporçao_gastos = distribuicao_despesas(lancamentos, totalizadorDoMes.despesas)
 
 			estaNegativo = totalizadorDoMes.saldo < 0
@@ -87,6 +74,19 @@
 				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.rendimentos)
 			}
 			return totalizadorDoMes
+		}
+
+		function distribuicao_despesas(lancamentos, total)
+		{	
+			distribuicao_de_despesas = []
+			for (lancamento of lancamentos)
+			{
+				if (lancamento.tipo === "despesa") {
+					 porcentagem_de_cada_gasto = arredondar((lancamento.valor/(-total)*100))
+					 distribuicao_de_despesas.push({Categoria: lancamento.categoria ,porcentagem_de_cada_gasto  } )		
+				}	
+			}
+		return distribuicao_de_despesas
 		}
 
 		
