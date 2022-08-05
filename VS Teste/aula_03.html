@@ -47,7 +47,7 @@
 
 		function calcularSaldo (mes, saldoInicial, lancamentos) {
 			console.log(mes)
-			totalizadorDoMes = {saldo:0 ,saldoInicial, juros:0, rendimentos:0, receitas: 0 , despesas:0}
+			totalizadorDoMes = {saldo:0 ,saldoInicial, juros:0, rendimentos:0, receitas: 0 , despesas:0, proporçao_gastos: []}
 			totalizadorDoMes.saldo = saldoInicial
 
 			for (lancamento of lancamentos) {
@@ -62,19 +62,23 @@
 			
 			}
 
-
+		function distribuicao_despesas(lancamentos, total)
+		{	
+			distribuicao_de_despesas = []
 			for (lancamento of lancamentos)
 			{
 				if (lancamento.tipo === "despesa") {
-					 porcentagem_de_cada_gasto = arredondar((lancamento.valor/(-totalizadorDoMes.despesas)*100))
-					console.log(lancamento.categoria,porcentagem_de_cada_gasto, "%")
+					 porcentagem_de_cada_gasto = arredondar((lancamento.valor/(-total)*100))
+					 distribuicao_de_despesas.push({Categoria: lancamento.categoria ,porcentagem_de_cada_gasto  } )		
 				}
 			}
+		return distribuicao_de_despesas
+		}
 
+			totalizadorDoMes.proporçao_gastos = distribuicao_despesas(lancamentos, totalizadorDoMes.despesas)
 
-
-			console.log(totalizadorDoMes.despesas)
 			estaNegativo = totalizadorDoMes.saldo < 0
+
 			if (estaNegativo) {
 				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo)
 				totalizadorDoMes.saldo = arredondar(totalizadorDoMes.saldo + totalizadorDoMes.juros)
@@ -103,6 +107,8 @@
 		
 		totalizadorDoMes1 = calcularSaldo("Janeiro", saldoInicial, lancamentosJaneiro)
 		console.log(totalizadorDoMes1)
+		
+
 		
 	</script>
 </html>
