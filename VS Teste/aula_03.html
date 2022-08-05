@@ -24,11 +24,6 @@
         console.log(novoLancemento)
         console.log(novoLancemento2)
 
-
-
-
-
-
         
 		function arredondar (valor) {
 			return Math.round(valor*100)/100
@@ -83,13 +78,12 @@
 			{
 				if (lancamento.tipo === "despesa") {
 					 porcentagem_de_cada_gasto = arredondar((lancamento.valor/(-total)*100))
-					 distribuicao_de_despesas.push({Categoria: lancamento.categoria ,porcentagem_de_cada_gasto  } )		
+					 distribuicao_de_despesas.push({Categoria: lancamento.categoria ,porcentagem_de_cada_gasto  } )
+		
 				}	
 			}
-		return distribuicao_de_despesas
+			return distribuicao_de_despesas
 		}
-
-		
 
 		saldoInicial = 0
 		lancamentosJaneiro = [
