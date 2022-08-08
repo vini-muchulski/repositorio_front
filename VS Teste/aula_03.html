@@ -89,16 +89,32 @@
 		class Mes {
 			constructor(nome,saldoInicial)
 			{
-				if(nome === "" ) throw new Error("Insira um mês");
+				if(nome === "" ) throw new Error("Insira um mês");{
 				this.nome = nome
 				this.saldoInicial = saldoInicial
 				this.totalizadorDoMes = {saldo:0 ,saldoInicial, juros:0, rendimentos:0, receitas: 0 , despesas:0, proporçao_gastos: []}
 				this.lancamentos = []
+				}
 			}
+			adicionarLancamento(lancamento){
+				this.lancamentos.push(lancamento);
+			}
+
+			calcularSaldo(){
+				for(const lancamento of this.lancamentos){
+					if (lancamento.tipo === "receita"){
+						this.totalizadorDoMes.saldo += lancamento.valor;
+					}
+					
+				}
+
+			}
+			
 		}
 
-		const Janeiro = new Mes("janeiro",1000)
-		console.log(Janeiro)
+		const Outubro = new Mes("Outubro",1000)
+		Outubro.adicionarLancamento(new Lancamento("Salário","receita", 5000 ));
+		console.log(Outubro)
 	
 		const saldoInicial = 0
 		const lancamentosJaneiro = [
