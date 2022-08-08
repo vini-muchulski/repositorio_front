@@ -30,12 +30,12 @@
 		}
 
 		function calcularJuros (valor) {
-			juros = arredondar(valor * 0.1)
+			const juros = arredondar(valor * 0.1)
 			return juros
 		}
 		
 		function calcularRendimentos (valor) {
-			rendimentos = arredondar(valor * 0.005)
+			const rendimentos = arredondar(valor * 0.005)
 			return rendimentos
 		}
 
@@ -45,7 +45,7 @@
 			totalizadorDoMes = {saldo:0 ,saldoInicial, juros:0, rendimentos:0, receitas: 0 , despesas:0, proporçao_gastos: []}
 			totalizadorDoMes.saldo = saldoInicial
 
-			for (lancamento of lancamentos) {
+			for (const lancamento of lancamentos) {
 				if (lancamento.tipo === "receita") {
 					totalizadorDoMes.saldo += lancamento.valor
 					totalizadorDoMes.receitas += lancamento.valor
@@ -59,7 +59,7 @@
 
 			totalizadorDoMes.proporçao_gastos = distribuicao_despesas(lancamentos, totalizadorDoMes.despesas)
 
-			estaNegativo = totalizadorDoMes.saldo < 0
+			const estaNegativo = totalizadorDoMes.saldo < 0
 
 			if (estaNegativo) {
 				totalizadorDoMes.juros = calcularJuros(totalizadorDoMes.saldo)
@@ -85,8 +85,23 @@
 			return distribuicao_de_despesas
 		}
 
-		saldoInicial = 0
-		lancamentosJaneiro = [
+
+		class Mes {
+			constructor(nome,saldoInicial)
+			{
+				if(nome === "" ) throw new Error("Insira um mês");
+				this.nome = nome
+				this.saldoInicial = saldoInicial
+				this.totalizadorDoMes = {saldo:0 ,saldoInicial, juros:0, rendimentos:0, receitas: 0 , despesas:0, proporçao_gastos: []}
+				this.lancamentos = []
+			}
+		}
+
+		const Janeiro = new Mes("janeiro",1000)
+		console.log(Janeiro)
+	
+		const saldoInicial = 0
+		const lancamentosJaneiro = [
 			new Lancamento("Salário","receita", 4000 ),
 			new Lancamento("Aluguel","despesa", 1000),
 			new Lancamento("Conta de Luz","despesa", 200 ),
