@@ -1,0 +1,51 @@
+body {
+  background: #2e8b57;
+}
+
+#ejec_logo {
+  width: 30%;
+  padding-left: 250px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  border: 4px solid #4b0082;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+p {
+  text-align: center;
+  color: white;
+}
+#nome_ejec {
+  font-size: 25px;
+}
+
+#vini {
+  width: 22%;
+}
+em strong {
+  color: white;
+}
+
+.itens {
+  font-style: italic;
+  color: white;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.apresentacao {
+  border: 4px solid #4b0082;
+  padding: 15px;
+}
+
+ul {
+  display: inline-block;
+  vertical-align: top;
+  width: 35%;
+  margin-right: 18%;
+}
