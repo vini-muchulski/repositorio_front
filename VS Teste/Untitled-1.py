@@ -1,1 +1,0 @@
-print("Python é a melhor linguagem, vai dizer")
