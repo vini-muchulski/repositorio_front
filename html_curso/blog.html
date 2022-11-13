@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Blog</title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
         <style>
-            .main-header{
-                color: black;
-                background-color: cadetblue;
-                text-align: center;
-                padding: 10px;
-            }
-            .main-footer{
-                color: black;
-                background-color: cadetblue;
-                text-align: center;
-                padding: 10px;
-            }
+            
         </style>
 
     </head>
 
     <body>
-        <header class="main-header">
-                <h1>Meu Blog</h1>
+        <header >
+                <h1 class="main-Hd">Meu Blog</h1>
         </header>
-        <nav>
+        
+
+        <section>
+            <article>
+                <h1 class="h1_1">Quem sou</h1>
+                <small class="small">By Vinni</small>
+                <p class="paragrafo">Sommelier de foguete & Nerd de Academia!</p>
+                <p class="paragrafo">Engineering Student - UFSC</p>
+            </article>
+
+            <aside class="links_uteis">
+                <ul>
+                    <li><a href="https://github.com/vini-muchulski">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/vinicius-wolosky-muchulski-ab8359247/">Linkedin</a></li>
+                </ul>
+            </aside>
+
+            <article>
+                <h1 class="h1_1">Senatus Populusque Romanus</h1>
+                <small class="small">By Chris Hadfield</small>
+                <p class="paragrafo">The more you know, the less you fear.</p>
+            </article>
+        </section>
+
+
+        <nav class="links_uteis">
             <ul>
                 <li>
                     <a href="index.html">Inicio
@@ -35,29 +53,40 @@
 
         </nav>
 
-        <section>
-            <article>
-                <h1>Lorem ipsum dolor sit.</h1>
-                <small>By Vinni</small>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium eligendi incidunt numquam!</p>
-            </article>
 
-            <article>
-                <h1>Lorem.</h1>
-                <small>By Levi</small>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            </article>
-        </section>
-
-        <aside>
+        <aside class="links_uteis">
             <ul>
-                <li><a href="exemplo./html">Desenvolvimento WEB</a></li>
+                <li><a href="https://www.youtube.com/watch?v=Xb0PYr9EgPk&ab_channel=MasterClass">Official Trailer</a></li>
             </ul>
         </aside>
 
         <footer class="main-footer">
             <p>&copy;Vini MW</p>
         </footer>
+
+
+        <!--Formularios-->
+        <form action="form.php" method = "post">
+            
+            <div class="formulario">   
+
+                <label>Email: </label>
+                <input type="email">
+            </div>
+
+            <div>
+
+            <div class="formulario">
+                <label>Mensagem
+
+                </label>
+                <textarea name="mensagem">
+
+                </textarea>
+            </div>
+
+            <input type="submit" class="input" >
+        </form>
     </body>
 
 
